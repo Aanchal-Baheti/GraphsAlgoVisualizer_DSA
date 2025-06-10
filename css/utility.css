@@ -1,0 +1,77 @@
+.icon {
+  aspect-ratio: 1;
+  width: 20px;
+}
+.wall {
+  border-color: var(--color-dark);
+  animation: wallAnimation 0.5s ease-out forwards;
+}
+.path {
+  animation: pathAnimation 1.5s ease-out forwards;
+}
+.visited {
+  animation: visitedAnimation 1.5s ease-out forwards;
+}
+.unvisited {
+  border: 1px solid var(--light-line);
+}
+.source {
+  background: url(../assets/source.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.target {
+  background: url(../assets/target.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes wallAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: var(--wall-color);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: var(--wall-color);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--wall-color);
+  }
+}
+
+@keyframes pathAnimation {
+  0% {
+    transform: scale(0.6);
+    background-color: var(--path-color);
+  }
+  50% {
+    transform: scale(1);
+    background-color: var(--path-color);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--path-color);
+  }
+}
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #e58f65;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #a88fac;
+  }
+  75% {
+    transform: scale(1);
+    background-color: #d4b2d8;
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--visited-color);
+  }
+}
